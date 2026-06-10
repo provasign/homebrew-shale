@@ -5,13 +5,13 @@
 class Shale < Formula
   desc "Agent PR evidence — intent capture and session evidence rendered on pull requests"
   homepage "https://github.com/provasign/shale"
-  version "0.1.12"
+  version "0.1.13"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/provasign/shale/releases/download/v0.1.12/shale_darwin_amd64.tar.gz"
-      sha256 "e5abf2630213269f986588f412da27cece3ab2176408ab377b881e885f51d146"
+      sha256 "cd0a9deae9571f7d1f7c3b4ab7dc7a430af138f6d0f0e01a0b733fdcda245b13"
 
       define_method(:install) do
         bin.install "shale"
@@ -19,7 +19,7 @@ class Shale < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/provasign/shale/releases/download/v0.1.12/shale_darwin_arm64.tar.gz"
-      sha256 "887cf0588f6029241493d60655c47cc97fafc576e7c0f8eb442a7c20595612bf"
+      sha256 "6db88b381e5d7d598387dc7b12dc8ef309814ac18886ad08425a7f4d8dccfaf4"
 
       define_method(:install) do
         bin.install "shale"
@@ -30,14 +30,14 @@ class Shale < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/provasign/shale/releases/download/v0.1.12/shale_linux_amd64.tar.gz"
-      sha256 "b594874eea3ecf47ee19e587bb3f3936c2c3a824925e6817f4f28554a16662b3"
+      sha256 "76063cd2aaf3f2bee17aa5c203036042f6adaa25dd4a1ecf42797d93ae019e55"
       define_method(:install) do
         bin.install "shale"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/provasign/shale/releases/download/v0.1.12/shale_linux_arm64.tar.gz"
-      sha256 "37bb8eb65c0fa8cf70daa1e4cb6f800adc1add2171a85509456e918f60c3a593"
+      sha256 "3e3656563c2efdf0ff4b6a31597580d98d8ec4b5ba99bde2ea46330bf7900593"
       define_method(:install) do
         bin.install "shale"
       end
