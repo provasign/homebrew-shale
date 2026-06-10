@@ -10,16 +10,16 @@ class Shale < Formula
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/provasign/shale/releases/download/v0.1.12/shale_darwin_amd64.tar.gz"
-      sha256 "cd0a9deae9571f7d1f7c3b4ab7dc7a430af138f6d0f0e01a0b733fdcda245b13"
+      url "https://github.com/provasign/shale/releases/download/v0.1.13/shale_darwin_amd64.tar.gz"
+      sha256 "41502c79a48d76811e979241b4173e8954cb0af05ea94941267b4cf92f9ebd20"
 
       define_method(:install) do
         bin.install "shale"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/provasign/shale/releases/download/v0.1.12/shale_darwin_arm64.tar.gz"
-      sha256 "6db88b381e5d7d598387dc7b12dc8ef309814ac18886ad08425a7f4d8dccfaf4"
+      url "https://github.com/provasign/shale/releases/download/v0.1.13/shale_darwin_arm64.tar.gz"
+      sha256 "f3aec352a90700f62e76cba2f3b6311907cb6e7f9fb2f1bb71c8226f7ff4dda1"
 
       define_method(:install) do
         bin.install "shale"
@@ -29,15 +29,15 @@ class Shale < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/provasign/shale/releases/download/v0.1.12/shale_linux_amd64.tar.gz"
-      sha256 "76063cd2aaf3f2bee17aa5c203036042f6adaa25dd4a1ecf42797d93ae019e55"
+      url "https://github.com/provasign/shale/releases/download/v0.1.13/shale_linux_amd64.tar.gz"
+      sha256 "b6d1ce8fd526e6b1599dec69fff33ea772e8117a86f275756f023e7bf543efac"
       define_method(:install) do
         bin.install "shale"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/provasign/shale/releases/download/v0.1.12/shale_linux_arm64.tar.gz"
-      sha256 "3e3656563c2efdf0ff4b6a31597580d98d8ec4b5ba99bde2ea46330bf7900593"
+      url "https://github.com/provasign/shale/releases/download/v0.1.13/shale_linux_arm64.tar.gz"
+      sha256 "e006811c6d2b1d512305f61b3cc69120913dffc3511b268ddee1590620118205"
       define_method(:install) do
         bin.install "shale"
       end
