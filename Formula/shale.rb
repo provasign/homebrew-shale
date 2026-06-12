@@ -5,21 +5,21 @@
 class Shale < Formula
   desc "Agent PR evidence — intent capture and session evidence rendered on pull requests"
   homepage "https://github.com/provasign/shale"
-  version "0.1.21"
+  version "0.1.22"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/provasign/shale/releases/download/v0.1.21/shale_darwin_amd64.tar.gz"
-      sha256 "cf8281e200be3bca0a6012574ca67f1f1a3d77d39dac47df2899c1547af5e552"
+      url "https://github.com/provasign/shale/releases/download/v0.1.22/shale_darwin_amd64.tar.gz"
+      sha256 "e52ba04663812d8f9977ef63a10a6d5a24de81e20ee81f4bf47fe3c173c24b0f"
 
       define_method(:install) do
         bin.install "shale"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/provasign/shale/releases/download/v0.1.21/shale_darwin_arm64.tar.gz"
-      sha256 "fa07a42442d76f0bab90452b29d4de43542e063b6b3e943ca8450cc99f4c9930"
+      url "https://github.com/provasign/shale/releases/download/v0.1.22/shale_darwin_arm64.tar.gz"
+      sha256 "6fe9d2e83dd87ccb8a6886e646d149137d4de88aab1ce02d9703c6e8cd6317eb"
 
       define_method(:install) do
         bin.install "shale"
@@ -29,15 +29,15 @@ class Shale < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/provasign/shale/releases/download/v0.1.21/shale_linux_amd64.tar.gz"
-      sha256 "76ee8f72c1b96c1bb4b2ee0b2714c42a070be0695f417d2d69a1895ab546acfb"
+      url "https://github.com/provasign/shale/releases/download/v0.1.22/shale_linux_amd64.tar.gz"
+      sha256 "e1dc82e0b332b90dace4864601e8e661191f3fa8702f9c6afab8e16949ca6ec4"
       define_method(:install) do
         bin.install "shale"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/provasign/shale/releases/download/v0.1.21/shale_linux_arm64.tar.gz"
-      sha256 "f8380620d570fa1561e13bdcfc1fb0b26006cc45514b1a3a62cac3d76efe80dc"
+      url "https://github.com/provasign/shale/releases/download/v0.1.22/shale_linux_arm64.tar.gz"
+      sha256 "90945ed5c0d521615f231b4e5f86d8d0004e9c25fdcda3dadf07808135e3f9a9"
       define_method(:install) do
         bin.install "shale"
       end
