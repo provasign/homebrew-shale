@@ -4,41 +4,41 @@
 class Fuse < Formula
   desc "Semantic git merge driver — symbol-aware auto-resolution with AI handoff"
   homepage "https://github.com/provasign/fuse"
-  version "0.8.1"
+  version "0.9.0"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/provasign/fuse/releases/download/v0.8.1/fuse-v0.8.1-darwin-amd64"
-      sha256 "fdc1c46c82f6c30c0b5e77d26dd06e875532466a29082a4d4aacc9321d131275"
+      url "https://github.com/provasign/fuse/releases/download/v0.9.0/fuse-v0.9.0-darwin-amd64"
+      sha256 "fc36f23b5004aacf30e460e07e5fbc77b39275b6e30d07524305ab0734f08691"
 
       define_method(:install) do
-        bin.install "fuse-v0.8.1-darwin-amd64" => "fuse"
+        bin.install "fuse-v0.9.0-darwin-amd64" => "fuse"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/provasign/fuse/releases/download/v0.8.1/fuse-v0.8.1-darwin-arm64"
-      sha256 "65df879e674158c8797204fee9baa4ab0db741ebd38ce699488294325ae28f0d"
+      url "https://github.com/provasign/fuse/releases/download/v0.9.0/fuse-v0.9.0-darwin-arm64"
+      sha256 "e9efae4db2934ff445443453cf04f42aa9a27bf94452d7905fcd30e1dff67502"
 
       define_method(:install) do
-        bin.install "fuse-v0.8.1-darwin-arm64" => "fuse"
+        bin.install "fuse-v0.9.0-darwin-arm64" => "fuse"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/provasign/fuse/releases/download/v0.8.1/fuse-v0.8.1-linux-amd64"
-      sha256 "897ffee5fd9894dddd993227b27586ac10968f4c1c0a4e33122a15008732edbd"
+      url "https://github.com/provasign/fuse/releases/download/v0.9.0/fuse-v0.9.0-linux-amd64"
+      sha256 "9c3b2a8b302e54492d98924b4bb47923c5cb424d66baa1432d23a8b57004fad9"
       define_method(:install) do
-        bin.install "fuse-v0.8.1-linux-amd64" => "fuse"
+        bin.install "fuse-v0.9.0-linux-amd64" => "fuse"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/provasign/fuse/releases/download/v0.8.1/fuse-v0.8.1-linux-arm64"
-      sha256 "1ec25d3c3fea1273b2333546526c1c452b183747b8008f323726b07e1dafce5f"
+      url "https://github.com/provasign/fuse/releases/download/v0.9.0/fuse-v0.9.0-linux-arm64"
+      sha256 "34d691d05d71c1b4c590a01f4d79a17ac547be6a448e853462248f38f855ccf6"
       define_method(:install) do
-        bin.install "fuse-v0.8.1-linux-arm64" => "fuse"
+        bin.install "fuse-v0.9.0-linux-arm64" => "fuse"
       end
     end
   end
