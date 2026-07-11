@@ -4,41 +4,41 @@
 class Mason < Formula
   desc "Model-agnostic coding agent with the prism code graph baked in"
   homepage "https://github.com/provasign/mason"
-  version "0.7.2"
+  version "0.7.3"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/provasign/mason/releases/download/v0.7.2/mason-v0.7.2-darwin-amd64"
-      sha256 "0d9d8c9ad9007c19fa6d5cdb7b7fe93dddfd9871087d5f803905f5fec72ae58a"
+      url "https://github.com/provasign/mason/releases/download/v0.7.3/mason-v0.7.3-darwin-amd64"
+      sha256 "5b4548d6ff944e886f7e98a0b016d05a54f74004ad9f1cc27d75db1ff2ebd22a"
 
       define_method(:install) do
-        bin.install "mason-v0.7.2-darwin-amd64" => "mason"
+        bin.install "mason-v0.7.3-darwin-amd64" => "mason"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/provasign/mason/releases/download/v0.7.2/mason-v0.7.2-darwin-arm64"
-      sha256 "9277c425880afd6d26cc4650e476258217cc30c6c8cc97bcc9fd67fb346e93d1"
+      url "https://github.com/provasign/mason/releases/download/v0.7.3/mason-v0.7.3-darwin-arm64"
+      sha256 "1ed7d7da0cc698a8828a50ce1c8b8816a81e4c60f36a7f0241dda1a760148df4"
 
       define_method(:install) do
-        bin.install "mason-v0.7.2-darwin-arm64" => "mason"
+        bin.install "mason-v0.7.3-darwin-arm64" => "mason"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/provasign/mason/releases/download/v0.7.2/mason-v0.7.2-linux-amd64"
-      sha256 "db27efb786650eeff0933a94bcda16f26549f61c6ed37afcde779a40e31c6238"
+      url "https://github.com/provasign/mason/releases/download/v0.7.3/mason-v0.7.3-linux-amd64"
+      sha256 "67735b2f54466832dc6806a20c50407e4446056d11ed7310b23ef72e360be972"
       define_method(:install) do
-        bin.install "mason-v0.7.2-linux-amd64" => "mason"
+        bin.install "mason-v0.7.3-linux-amd64" => "mason"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/provasign/mason/releases/download/v0.7.2/mason-v0.7.2-linux-arm64"
-      sha256 "c052996a387f7c56b778c80e019191a49e2ac9bcd02ff3ae9420656d6e82c7ce"
+      url "https://github.com/provasign/mason/releases/download/v0.7.3/mason-v0.7.3-linux-arm64"
+      sha256 "e51657de85fa7bc3cdf5c3edd6d36be2fda250b86ab12facf156ef2470c64a7f"
       define_method(:install) do
-        bin.install "mason-v0.7.2-linux-arm64" => "mason"
+        bin.install "mason-v0.7.3-linux-arm64" => "mason"
       end
     end
   end
