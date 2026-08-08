@@ -1,0 +1,38 @@
+name: Refresh formulae
+# Keeps every formula in step with its repo's latest release.
+#
+# This runs HERE rather than in each tool's release workflow because that
+# arrangement needs a cross-repo push token in every tool repo. shale had one;
+# prism and mason never did, so their formulae silently froze at 0.23.0 and
+# 0.15.0 while 15 and 16 releases shipped, and `brew install` served year-old
+# builds. A workflow in the tap writes to its own repository with the built-in
+# GITHUB_TOKEN — there is no secret to forget.
+on:
+  schedule:
+    - cron: "17 6 * * *"   # daily
+  workflow_dispatch:        # and on demand
+permissions:
+  contents: write
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Regenerate stale formulae
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: scripts/refresh-formulae.sh
+      - name: Commit any updates
+        run: |
+          set -euo pipefail
+          if [ -z "$(git status --porcelain -- Formula/)" ]; then
+            echo "All formulae already current."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Formula/
+          git commit -m "Refresh formulae to latest releases
+
+$(git diff --cached --name-only | sed 's|Formula/||;s|\.rb||' | tr '\n' ' ')"
+          git push
