@@ -32,7 +32,6 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add Formula/
-          git commit -m "Refresh formulae to latest releases
-
-$(git diff --cached --name-only | sed 's|Formula/||;s|\.rb||' | tr '\n' ' ')"
+          tools="$(git diff --cached --name-only | sed 's|Formula/||;s|\.rb||' | tr '\n' ' ')"
+          git commit -m "Refresh formulae to latest releases: ${tools}"
           git push
