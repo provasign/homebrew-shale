@@ -4,43 +4,43 @@
 class Prism < Formula
   desc "Graph-ranked code context for AI coding agents — Grove engine embedded"
   homepage "https://github.com/provasign/prism"
-  version "0.61.2"
+  version "0.62.0"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/provasign/prism/releases/download/v0.61.2/prism-v0.61.2-darwin-amd64"
-      sha256 "a25b036368fbac289a4546fac9225597b66e2f1a3cf788e19b347c85d8d0c095"
+      url "https://github.com/provasign/prism/releases/download/v0.62.0/prism-v0.62.0-darwin-amd64"
+      sha256 "a3764ced5c8835472180142c7cf4b1a0c9b7a7abc4a31bb04d82abe583226e6a"
 
       define_method(:install) do
-        bin.install "prism-v0.61.2-darwin-amd64" => "prism"
+        bin.install "prism-v0.62.0-darwin-amd64" => "prism"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/provasign/prism/releases/download/v0.61.2/prism-v0.61.2-darwin-arm64"
-      sha256 "d572ccb37bd038a7aee58edb7ed752a7e301fc1523450ebf5cde64c2e526e0c3"
+      url "https://github.com/provasign/prism/releases/download/v0.62.0/prism-v0.62.0-darwin-arm64"
+      sha256 "5bb5b74db35fe8932952baa471273b0e0b70cc5385c4be7bed646bd52241b726"
 
       define_method(:install) do
-        bin.install "prism-v0.61.2-darwin-arm64" => "prism"
+        bin.install "prism-v0.62.0-darwin-arm64" => "prism"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/provasign/prism/releases/download/v0.61.2/prism-v0.61.2-linux-amd64"
-      sha256 "86f4a80513b00777a9e72a9d512d7ffb0344e078e072ecc16bc6a10d09c7da1f"
+      url "https://github.com/provasign/prism/releases/download/v0.62.0/prism-v0.62.0-linux-amd64"
+      sha256 "7c540b8f0365c6fbb7db2f71e207333fef84a5fb41a98ef90bb85ae3df19eb86"
 
       define_method(:install) do
-        bin.install "prism-v0.61.2-linux-amd64" => "prism"
+        bin.install "prism-v0.62.0-linux-amd64" => "prism"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/provasign/prism/releases/download/v0.61.2/prism-v0.61.2-linux-arm64"
-      sha256 "111beeb94ae1eec3a963cb8b29df3e121b16f3683958ce96f9f7a3a5fc110a36"
+      url "https://github.com/provasign/prism/releases/download/v0.62.0/prism-v0.62.0-linux-arm64"
+      sha256 "188ea4fd6a1130bc813bbc6c725e155bbd071b6dee01b06f38fa5e29f7374c50"
 
       define_method(:install) do
-        bin.install "prism-v0.61.2-linux-arm64" => "prism"
+        bin.install "prism-v0.62.0-linux-arm64" => "prism"
       end
     end
   end
