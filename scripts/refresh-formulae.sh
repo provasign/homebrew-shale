@@ -45,6 +45,20 @@ for tool in "${TOOLS[@]}"; do
   class="$(grep -m1 '^class ' "${formula}" | awk '{print $2}')"
   base="https://github.com/provasign/${tool}/releases/download/${ver}"
 
+  caveats=""
+  if [ "${tool}" = "prism" ]; then
+    caveats='  def caveats
+    <<~EOS
+      Run `prism init --global` after installing or upgrading so AI clients
+      use this Homebrew-managed executable. Run `prism init` inside existing
+      projects to refresh project-level MCP registrations.
+
+      Prism reports other installed copies when their versions differ.
+    EOS
+  end
+'
+  fi
+
   cat > "${formula}" <<FORMULA
 # typed: false
 # frozen_string_literal: true
@@ -93,6 +107,7 @@ class ${class} < Formula
     end
   end
 
+${caveats}
   test do
     assert_match "${tool}", shell_output("#{bin}/${tool} version")
   end
