@@ -49,9 +49,11 @@ for tool in "${TOOLS[@]}"; do
   if [ "${tool}" = "prism" ]; then
     caveats='  def caveats
     <<~EOS
-      Run `prism init --global` after installing or upgrading so AI clients
-      use this Homebrew-managed executable. Run `prism init` inside existing
-      projects to refresh project-level MCP registrations.
+      Run `prism init` inside each project after installing or upgrading to
+      configure supported AI clients. Prism setup is project-scoped;
+      `prism init --global` is no longer supported.
+
+      Restart or reload running AI clients after upgrading Prism.
 
       Prism reports other installed copies when their versions differ.
     EOS
